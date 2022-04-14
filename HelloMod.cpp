@@ -153,59 +153,23 @@ class HelloMod : public DLLInterface {
     char version[16] = "\0";
     HelloSetup* setup;
 
-    const wchar_t* GetName() { return L"Hello Creatures"; }
-
     bool Initialize(const char* version) {
         strncpy(this->version, version, sizeof(this->version) - 1);
         setup = new HelloSetup();
     }
 
-    void Shutdown() {
-        return;
-    }
-
-    bool IsScenarioCompatible(const char* modname) const {
-        return strcmp("RDNMod", modname) == 0;
-    }
-
-    DLLGameInterface* GameCreate(SimEngineInterface* sim) {
-        return new HelloGame(sim);
-    }
-
-    void GameDestroy(DLLGameInterface* p) {
-        delete p;
-        return;
-    }
-
-    DLLScoreInterface* ScoreCreate() {
-        return new HelloScore();
-    }
-
-    void ScoreDestroy(DLLScoreInterface* p) {
-        delete p;
-        return;
-    }
-
-    DLLSetupInterface* SetupCreate() {
-        return setup;
-    }
-
-    void SetupDestroy(DLLSetupInterface* p) {
-        setup = new HelloSetup();
-        return;
-    }
-
-    ZsProgress ZsPublish() {
-        return ZSP_Done;
-    }
-
-    ZsProgress ZsUpdate() {
-        return ZSP_Done;
-    }
-
-    ZsProgress ZsAbort() {
-        return ZSP_Done;
-    }
+    const wchar_t* GetName() { return L"Hello Creatures"; }
+    void Shutdown() {}
+    bool IsScenarioCompatible(const char* modname) const { return strcmp("RDNMod", modname) == 0; }
+    DLLGameInterface* GameCreate(SimEngineInterface* sim) { return new HelloGame(sim); }
+    void GameDestroy(DLLGameInterface* p) { delete p; }
+    DLLScoreInterface* ScoreCreate() { return new HelloScore(); }
+    void ScoreDestroy(DLLScoreInterface* p) { delete p; }
+    DLLSetupInterface* SetupCreate() { return setup; }
+    void SetupDestroy(DLLSetupInterface* p) { delete setup;  setup = new HelloSetup(); }
+    ZsProgress ZsPublish() { return ZSP_Done; }
+    ZsProgress ZsUpdate() { return ZSP_Done; }
+    ZsProgress ZsAbort() { return ZSP_Done; }
 };
 
 static HelloMod* mod = NULL;
