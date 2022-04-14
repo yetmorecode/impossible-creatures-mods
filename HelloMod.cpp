@@ -22,6 +22,7 @@
  
 #include <windows.h>
 #include "ModInterface/DllInterface.h"
+#include <vector>
 
 class HelloCpu : public DLLCpuInterface {
     GameAI* CreateGameAI(CommandInterface* command) {
@@ -32,11 +33,39 @@ class HelloCpu : public DLLCpuInterface {
 };
 
 class HelloGui : public DLLGuiInterface {
-
+    void InitLuaGui(LuaConfig* lc) {}
+    void ShutLuaGui(LuaConfig* lc) {}
+    void OnEntityCreate(const Entity* e) {}
+    void ChangePlayerArmy(unsigned long, const std::vector<long>&) {}
+    EntityFilter* GetEntityFilter() { return NULL; }
+    ModSimVis* GetModSimVis() { return NULL; }
+    ModUIEvent* GetModUIEvent() { return NULL; }
+    NISletInterface* GetNISletInterface() { return NULL; }
+    void DoCommand(const EntityGroup& g) {}
+    void DoCommand(const Vec3f* v, unsigned long n) {}
+    bool ProcessInput(const Plat::InputEvent& ie) { return true; }
+    const char* GetCursor(const Entity* mouseOverEntity) { return NULL; }
+    
+    void CreateHUD(
+        const Player* localplayer, 
+        RTSHud* hud, CommandInterface* command, 
+        UIInterface* ui, 
+        MessageInterface* message, 
+        SelectionInterface* sel,
+        CameraInterface* cam,
+        SoundInterface* sound,
+        FXInterface* fx
+    ) {}
+    void ShutdownHUD() {}
+    void UpdateHUD(float elapsedSeconds) {}
+    void UIPause(bool bPause) {}
+    void Save(IFF& iff) {}
+    void Load(IFF& iff) {}
+    void ShowModOptions(void) {}
 };
 
 class HelloSim : public DLLSimInterface {
-
+    // TODO
 };
 
 class HelloGame : public DLLGameInterface {
