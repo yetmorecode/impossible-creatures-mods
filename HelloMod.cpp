@@ -55,11 +55,69 @@ public:
 };
 
 class HelloScore : public DLLScoreInterface {
-
+	int TotalDuration() const { return 13; }
+	PlayerState PlayerFinalState(unsigned long idplayer) const { return PlayerState::PS_WON; }
+	const wchar_t* PlayerName(unsigned long idplayer) const { return L"player name"; }
+	size_t UnitsTypeCount(unsigned long idplayer) const { return 0; }
+	long UnitsTypeAt(unsigned long idplayer, size_t index) const { return 0; }
+	int UnitTotal(unsigned long idplayer, long ebpid) const { return 0; }
+	size_t StatListCount() const { return 0; }
+	void StatListAt(size_t idx, wchar_t* out, size_t outlen) const { wcsncpy(out, L"StatListAt", outlen); }
+	void StatListTooltipAt(size_t idx, wchar_t* out, size_t outlen) const { wcsncpy(out, L"StatListTooltipAt", outlen); }
+	TabType	StatListTabTypeAt(size_t idx) const { return TT_ByPlayer; }
+	ValueType StatListTypeAt(size_t idx) const { return VT_Number; }
+	DecoratorFunc StatListDecoratorFuncAt(size_t idx) const { return DF_None; }
+	void StatListValue(size_t idx, unsigned long idplayer, int& out) const { out = 0; }
+	void StatListValue(size_t idx, unsigned long idplayer, long ebpnetid, int& out) const { out = 0; }
+	size_t ScoresTabsQty() const { return 0; }
+	void ScoresTabName(size_t tabIndex, wchar_t* out, size_t outlen) const { wcsncpy(out, L"ScoresTabName", outlen); }
+	bool ScoresTabColumn(size_t tabIndex, size_t columnIndex) const { return false; }
+	void ScoresTabColumnName(size_t tabIndex, size_t columnIndex, wchar_t* out, size_t outlen) const { wcsncpy(out, L"ScoresTabColumnName", outlen); }
+	void ScoresTabColumnTooltip(size_t tabIndex, size_t columnIndex, wchar_t* out, size_t outlen) const {	wcsncpy(out, L"ScoresTabColumnTooltip", outlen); }
+	ValueType ScoresTabColumnType(size_t tabIndex, size_t columnIndex) const { return VT_Number; }
+	DecoratorFunc ScoresTabColumnDecoratorFunc(size_t tabIndex, size_t columnIndex) const { return DF_None; }
+	TabType ScoresTabType(size_t tabIndex) const { return TT_Custom; }
+	void ScoresTabColumnValue(size_t tabIndex, size_t columnIndex, unsigned long arg0, int& out) const { out = 0; }
+	void ScoresTabColumnValue(size_t tabIndex, size_t columnIndex, unsigned long arg0, long arg1, int& out) const { out = 0; }
+	void ScoresTabColumnValue(size_t tabIndex, size_t columnIndex, unsigned long idplayer, wchar_t* out, size_t outlen) const { out[0] = L'\0'; }
 };
 
 class HelloSetup : public DLLSetupInterface {
-
+    void SetGameType(DLLSetupInterface::GameType gt) {}
+    void SetNetworkGame(bool bNetwork) {}
+    void SetRandomSeed(unsigned long seed) {}
+    void SetStatsScenario(const char* scenfile, const wchar_t* scenname) {}
+    void SetStatsGameID(const GUID& id) {}
+    unsigned long GetRandomSeed() const { return 1; }
+    void PlayerSetCount(size_t n) {}
+    void PlayerSetMax(size_t n) {}
+    size_t PlayerGetCount() const { return 1; }
+    size_t PlayerGetMax() const { return 1; }
+    void PlayerSetToAI(size_t n) {}
+    void PlayerSetToHuman(size_t n) {}
+    void PlayerSetName(size_t n, const wchar_t* name) {}
+    void PlayerSetPassport(size_t n, const wchar_t* passport) {}
+    void PlayerSetRace(size_t n, size_t race) {}
+    void PlayerSetTeam(size_t n, size_t t) {}
+	void OptionsInit(GameType gt, bool bNetwork) {}	
+	size_t OptionsCount() const { return 0; }
+	unsigned long OptionID(size_t optionIndex) const { return 0; }
+	void OptionName(wchar_t* out, size_t outlen, unsigned long optionID) const {}
+	void OptionTooltip(wchar_t* out, size_t outlen, unsigned long optionID) const {}
+	size_t OptionChoices(unsigned long optionID) const { return 0; }
+	size_t OptionChoiceDef(unsigned long optionID) const { return 0; }
+	bool OptionChoiceValid(unsigned long optionID, size_t choice) const { return true; }
+    void OptionChoiceName(wchar_t* out, size_t outlen, unsigned long optionID, size_t choice) const {}
+    bool OptionChoiceAISupport(unsigned long optionID, size_t choice) const { return false; }
+    void OptionSet(unsigned long optionID, size_t val) {}
+    size_t RaceGetCount() const { return 1; }
+    const wchar_t* RaceGetName(size_t index) const { return L"Hello race"; }
+    const wchar_t* RaceGetDesc(size_t index) const { return L"A simple but the only true race for sure"; }
+    // TODO: image?
+    const char* RaceGetImageFilename(size_t index) const { return "idk image filename?"; }
+    bool TeamGetEnabled() const { return false; }
+    // TODO: needs one option for game mode at least?
+    unsigned long GetGameModeOptionID() const { return 1; }
 };
 
 class HelloMod : public DLLInterface {
