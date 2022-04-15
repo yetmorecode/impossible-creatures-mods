@@ -12,3 +12,4 @@ Debug
 *.exp
 *.ipdb
 *.FileListAbsolute.txt
+*.user
