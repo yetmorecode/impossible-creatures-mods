@@ -1,5 +1,4 @@
-/.vs
-/.gitattributes
-/Debug
-/Release
-/x64
+.vs
+.gitattributes
+Debug
+Release

@@ -14,18 +14,12 @@
 * 
 * The goal of this mod is to provide a minimal implementation all of those
 * and to be buildable on a modern 2022 toolchain (e.g. Visual Studio 2022 CE).
-* 
-* To link the SDK headers in VS2022 you need to navigate to "HelloMod -> Properties ->
-* C/C++ -> General -> Additional Includes" and add the path to the "Include" folder
-* inside the SDK directory.
 */
 
 #define _CRT_SECURE_NO_WARNINGS 1
 
 #include <windows.h>
 #include "HelloMod.h"
-#include "Debug/db.h"
-#include "ModInterface/DllInterface.h"
 
 class HelloCpu : public DLLCpuInterface {
     GameAI* CreateGameAI(CommandInterface* command) {
@@ -184,13 +178,14 @@ class HelloMod : public DLLInterface {
 
     bool Initialize(const char* version) {
         strncpy(this->version, version, sizeof(this->version) - 1);
+        dbTracefAux("(HelloMod) Thanks for loading Hello Creatures %s", version);
         setup = new HelloSetup();
         return true;
     }
 
     const wchar_t* GetName() { return L"Hello Creatures"; }
     void Shutdown() {}
-    bool IsScenarioCompatible(const char* modname) const { return strcmp("RDNMod", modname) == 0; }
+    bool IsScenarioCompatible(const char* modname) const { return strcmp("IC", modname) == 0; }
     DLLGameInterface* GameCreate(SimEngineInterface* sim) { return new HelloGame(sim); }
     void GameDestroy(DLLGameInterface* p) { delete p; }
     DLLScoreInterface* ScoreCreate() { return new HelloScore(); }

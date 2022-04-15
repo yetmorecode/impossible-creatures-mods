@@ -23,6 +23,9 @@
     <None Include=".gitignore">
       <Filter>Quelldateien</Filter>
     </None>
+    <None Include="Readme.md">
+      <Filter>Quelldateien</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HelloMod.h">
