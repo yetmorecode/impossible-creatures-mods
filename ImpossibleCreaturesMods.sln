@@ -16,6 +16,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SimpleWrapper", "02-simple-
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RenameMod", "03-rename-mod\03-rename-mod.vcxproj", "{DB92EE45-B75E-4EFF-A20D-AA4A9EF19043}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AiMod", "04-ai-lua\04-ai-lua.vcxproj", "{65A1732D-0F33-472C-8788-B0D5EBAD676F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -48,6 +50,14 @@ Global
 		{DB92EE45-B75E-4EFF-A20D-AA4A9EF19043}.Release|x64.Build.0 = Release|x64
 		{DB92EE45-B75E-4EFF-A20D-AA4A9EF19043}.Release|x86.ActiveCfg = Release|Win32
 		{DB92EE45-B75E-4EFF-A20D-AA4A9EF19043}.Release|x86.Build.0 = Release|Win32
+		{65A1732D-0F33-472C-8788-B0D5EBAD676F}.Debug|x64.ActiveCfg = Debug|x64
+		{65A1732D-0F33-472C-8788-B0D5EBAD676F}.Debug|x64.Build.0 = Debug|x64
+		{65A1732D-0F33-472C-8788-B0D5EBAD676F}.Debug|x86.ActiveCfg = Debug|Win32
+		{65A1732D-0F33-472C-8788-B0D5EBAD676F}.Debug|x86.Build.0 = Debug|Win32
+		{65A1732D-0F33-472C-8788-B0D5EBAD676F}.Release|x64.ActiveCfg = Release|x64
+		{65A1732D-0F33-472C-8788-B0D5EBAD676F}.Release|x64.Build.0 = Release|x64
+		{65A1732D-0F33-472C-8788-B0D5EBAD676F}.Release|x86.ActiveCfg = Release|Win32
+		{65A1732D-0F33-472C-8788-B0D5EBAD676F}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

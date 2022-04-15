@@ -1,0 +1,11 @@
+[global]
+Name			= Tellurian AI mod
+Description		= Tellurian wrapped once more
+DllName			= AiMod
+LocaleFolder	= Tellurian
+ModFolder		= Tellurian
+ModVersion      = 2.9.0.4
+PatcherUrl		= 
+ArchiveFile_1	= TellurianData.sga
+ArchiveFile_2	= InsectData.sga
+CompatableMod_1 = IC
