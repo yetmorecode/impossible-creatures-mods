@@ -7,8 +7,7 @@ GetDllInterface_t originalGetInterface;
 GetDllVersion_t originalGetVersion;
 static DLLInterface* mod = NULL;
 
-BOOL APIENTRY DllMain(HMODULE h, DWORD  reason, LPVOID lpReserved) { \
-
+BOOL APIENTRY DllMain(HMODULE h, DWORD  reason, LPVOID lpReserved) {
     switch (reason) {
     case DLL_PROCESS_ATTACH: 
         originalDll = LoadLibraryA(ORIGINAL_DLL);
@@ -28,14 +27,6 @@ BOOL APIENTRY DllMain(HMODULE h, DWORD  reason, LPVOID lpReserved) { \
     return TRUE;
 }
 
-wchar_t name[32];
-const wchar_t* oldName;
-const wchar_t* NewGetName() {
-    wcscpy(name, L"Modded ");
-    wcscat(name, oldName);
-    return name;
-}
-
 extern "C" {
     __declspec(dllexport) DLLInterface* __cdecl GetDllInterface() {
         // Get access to tellurian.dll DLLInterface
@@ -43,7 +34,6 @@ extern "C" {
 
         // Do something with (i.e. log its name and version for a start)
         long version = originalGetVersion();
-
         dbTracefAux("%s: Original mod: %s %d.%d", __FUNCTION__,
             mod->GetName(),
             MODGET_MAJORVERSION(version),
@@ -52,12 +42,6 @@ extern "C" {
 
         // Do any kind of SDK assisted modding here
         // ...
-
-        // Like overwrite GetName() (very!) quick and dirty via vtable
-        oldName = mod->GetName();
-        void**** raw = (void****)mod;
-        //void** vtbl = **raw;
-        //vtbl[0] = (void*)&NewGetName;
         
         // Pass the DllInterface to the game
         return mod;
