@@ -1,7 +1,7 @@
 [global]
-Name			= Wrapper
+Name			= Rename Tellurian
 Description		= Tellurian wrapped once more
-DllName			= SimpleWrapper
+DllName			= RenameMod
 LocaleFolder	= Tellurian
 ModFolder		= Tellurian
 ModVersion      = 2.9.0.4

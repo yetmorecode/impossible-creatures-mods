@@ -186,17 +186,17 @@ class HelloMod : public DLLInterface {
     ZsProgress ZsAbort() { return ZSP_Done; }
 };
 
-static HelloMod* mod = NULL;
+static HelloMod* original = NULL;
 
 BOOL APIENTRY DllMain(HMODULE h, DWORD  reason, LPVOID lpReserved) {
     switch (reason) {
     case DLL_PROCESS_ATTACH:
         DisableThreadLibraryCalls(h);
-        mod = new HelloMod();
+        original = new HelloMod();
         break;
     case DLL_PROCESS_DETACH:
-        delete mod;
-        mod = NULL;
+        delete original;
+        original = NULL;
         break;
     }
     return TRUE;
@@ -204,7 +204,7 @@ BOOL APIENTRY DllMain(HMODULE h, DWORD  reason, LPVOID lpReserved) {
 
 extern "C" {
     __declspec(dllexport) DLLInterface* __cdecl GetDllInterface() {
-        return mod;
+        return original;
     }
     __declspec(dllexport) unsigned long __cdecl GetDllVersion() {
         return MODMAKE_VERSION(MajorVersion, MinorVersion);

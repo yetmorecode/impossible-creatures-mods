@@ -11,9 +11,9 @@
 typedef DLLInterface* (__cdecl *GetDllInterface_t)();
 typedef unsigned long (__cdecl *GetDllVersion_t)();
 
-#define EXPORT_DLL_FUNCTIONS(mod, major, minor) extern "C" { \
+#define EXPORT_MOD_FUNCTIONS(mod, version) extern "C" { \
     __declspec(dllexport) DLLInterface* __cdecl GetDllInterface() { return mod; } \
-    __declspec(dllexport) unsigned long __cdecl GetDllVersion() { return MODMAKE_VERSION(MajorVersion, MinorVersion); } \
+    __declspec(dllexport) unsigned long __cdecl GetDllVersion() { return version; } \
 }
 
 #define EXPORT_MOD(C) static C* mod = NULL; \
@@ -23,5 +23,5 @@ BOOL APIENTRY DllMain(HMODULE h, DWORD  reason, LPVOID lpReserved) { \
     case DLL_PROCESS_DETACH: delete mod; mod = NULL; break; } \
     return TRUE; \
 } \
-EXPORT_DLL_FUNCTIONS(mod, MajorVersion, MinorVersion)
+EXPORT_MOD_FUNCTIONS(mod, MODMAKE_VERSION(MajorVersion, MinorVersion))
 
