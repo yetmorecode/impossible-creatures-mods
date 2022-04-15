@@ -2,13 +2,12 @@
 
 #define ORIGINAL_DLL "tellurian.dll"
 
-HINSTANCE originalDll;
-GetDllInterface_t originalGetInterface;
-GetDllVersion_t originalGetVersion;
+static HINSTANCE originalDll;
+static GetDllInterface_t originalGetInterface;
+static GetDllVersion_t originalGetVersion;
 static DLLInterface* mod = NULL;
 
-BOOL APIENTRY DllMain(HMODULE h, DWORD  reason, LPVOID lpReserved) { \
-
+BOOL APIENTRY DllMain(HMODULE h, DWORD  reason, LPVOID lpReserved) {
     switch (reason) {
     case DLL_PROCESS_ATTACH: 
         originalDll = LoadLibraryA(ORIGINAL_DLL);
