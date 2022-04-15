@@ -19,10 +19,13 @@
 * C/C++ -> General -> Additional Includes" and add the path to the "Include" folder
 * inside the SDK directory.
 */
- 
+
+#define _CRT_SECURE_NO_WARNINGS 1
+
 #include <windows.h>
+#include "HelloMod.h"
+#include "Debug/db.h"
 #include "ModInterface/DllInterface.h"
-#include <vector>
 
 class HelloCpu : public DLLCpuInterface {
     GameAI* CreateGameAI(CommandInterface* command) {
@@ -65,7 +68,33 @@ class HelloGui : public DLLGuiInterface {
 };
 
 class HelloSim : public DLLSimInterface {
-    // TODO
+    bool InitLuaSim(LuaConfig* lc) { return true; }
+    void ShutLuaSim(LuaConfig* lc) {}
+    void InitTriggers() {}
+    void SetDecalInterface(DecalInterface* decal) {}
+    void SetTerrainOverlayInterface(TerrainOverlayInterface* overlay) {}
+    void SetGhostInterface(GhostInterface* ghost) {}
+    // TODO: need a world?
+    World* CreateNewWorld(bool bMissionEd) { return NULL; }
+    // TODO: need a player?
+    Player* CreateNewPlayer() { return NULL; }
+    // TODO: need entities?
+    Entity* CreateNewEntity(void* buffer, unsigned long id, const ControllerBlueprint* cbp) { return NULL; }
+    unsigned long MapPlayerToSimulation(size_t playerIndex) const { return 0; }
+    void GetDataToken(std::vector< std::pair< unsigned long, const char* > >& crcArray) const {}
+    bool IsPlayerAlly(unsigned long idPlayer1, unsigned long idPlayer2) const { return idPlayer1 == idPlayer2; }
+    bool IsPlayerEnemy(unsigned long idPlayer1, unsigned long idPlayer2) const { return idPlayer1 != idPlayer2; }
+    void SaveWorldStaticData(IFF& iff, const ImpassEditArray* impassEdit) {}
+    void LoadWorldStaticData(IFF& iff) {}
+    void LoadSPPersistentData(IFF&, SPPersistenceInterface*) {}
+    void SaveSPPersistentData(IFF&, SPPersistenceInterface*) {}
+    void NetworkKillPlayer(unsigned long idplayer, NetworkKillType type) {}
+    void StatsGameAbort() {}
+    void StatsZSSave() {}
+    bool IsScenarioSuccess(unsigned long idPlayer) const { return true; }
+    void OnTerrainModify(const Rect2f& rect, const ImpassEditArray* impassEdit) {}
+    bool IsCellImpassible(int x, int z) { return false; }
+    size_t GetPlayerCount(GameType gametype) { return 1; }
 };
 
 class HelloGame : public DLLGameInterface {
@@ -76,7 +105,7 @@ public:
     HelloGame(SimEngineInterface* sim) {
         cpu = new HelloCpu();
         gui = new HelloGui();
-        sim = new HelloSim();
+        this->sim = new HelloSim();
     }
     DLLCpuInterface* GetCpuInterface() { return cpu; }
     DLLGuiInterface* GetGuiInterface() { return gui; }
@@ -156,6 +185,7 @@ class HelloMod : public DLLInterface {
     bool Initialize(const char* version) {
         strncpy(this->version, version, sizeof(this->version) - 1);
         setup = new HelloSetup();
+        return true;
     }
 
     const wchar_t* GetName() { return L"Hello Creatures"; }

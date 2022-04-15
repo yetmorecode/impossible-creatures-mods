@@ -1,2 +1,5 @@
 /.vs
 /.gitattributes
+/Debug
+/Release
+/x64
