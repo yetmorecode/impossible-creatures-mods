@@ -1,4 +1,13 @@
 .vs
 .gitattributes
 Debug
-Release
+*.log
+*.dll.recipe
+*.tlog
+*.pdb
+*.lib
+*.obj
+*.iobj
+*.exp
+*.ipdb
+*.FileListAbsolute.txt
