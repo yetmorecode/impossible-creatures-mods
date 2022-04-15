@@ -43,12 +43,6 @@ extern "C" {
         // Do any kind of SDK assisted modding here
         // ...
 
-        // Like overwrite the name quick and dirty directly in the original dll
-        wchar_t *oldName = (wchar_t*)mod->GetName();
-        DWORD tmp;
-        VirtualProtect(oldName, 16, PAGE_EXECUTE_READWRITE, &tmp);
-        wcscpy(oldName, L"Modded Tellurian");
-        
         // Pass the DllInterface to the game
         return mod;
     }
