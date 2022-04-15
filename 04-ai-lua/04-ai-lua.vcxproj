@@ -96,6 +96,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>C:\Program Files (x86)\Steam\steamapps\common\Impossible Creatures\SDK\Include</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -103,10 +104,11 @@
       <EnableUAC>false</EnableUAC>
       <AdditionalLibraryDirectories>C:\Program Files (x86)\Steam\steamapps\common\Impossible Creatures;C:\Program Files (x86)\Steam\steamapps\common\Impossible Creatures\SDK\Lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>Memory.lib;Debug.lib;Lua.lib;Assist.lib;Util.lib;Platform.lib;Filesystem.lib;Localizer.lib;Math.lib;ModInterface.lib;SimEngine.lib;SurfVol.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <ShowProgress>LinkVerbose</ShowProgress>
+      <ShowProgress>NotSet</ShowProgress>
     </Link>
     <ProjectReference>
-      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -120,6 +122,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>C:\Program Files (x86)\Steam\steamapps\common\Impossible Creatures\SDK\Include</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -129,10 +132,11 @@
       <EnableUAC>false</EnableUAC>
       <AdditionalLibraryDirectories>C:\Program Files (x86)\Steam\steamapps\common\Impossible Creatures;C:\Program Files (x86)\Steam\steamapps\common\Impossible Creatures\SDK\Lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>Memory.lib;Debug.lib;Lua.lib;Assist.lib;Util.lib;Platform.lib;Filesystem.lib;Localizer.lib;Math.lib;ModInterface.lib;SimEngine.lib;SurfVol.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <ShowProgress>LinkVerbose</ShowProgress>
+      <ShowProgress>NotSet</ShowProgress>
     </Link>
     <ProjectReference>
-      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -144,6 +148,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>C:\Program Files (x86)\Steam\steamapps\common\Impossible Creatures\SDK\Include</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -151,10 +156,11 @@
       <EnableUAC>false</EnableUAC>
       <AdditionalLibraryDirectories>C:\Program Files (x86)\Steam\steamapps\common\Impossible Creatures;C:\Program Files (x86)\Steam\steamapps\common\Impossible Creatures\SDK\Lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>Memory.lib;Debug.lib;Lua.lib;Assist.lib;Util.lib;Platform.lib;Filesystem.lib;Localizer.lib;Math.lib;ModInterface.lib;SimEngine.lib;SurfVol.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <ShowProgress>LinkVerbose</ShowProgress>
+      <ShowProgress>NotSet</ShowProgress>
     </Link>
     <ProjectReference>
-      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -168,6 +174,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>C:\Program Files (x86)\Steam\steamapps\common\Impossible Creatures\SDK\Include</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -177,10 +184,11 @@
       <EnableUAC>false</EnableUAC>
       <AdditionalLibraryDirectories>C:\Program Files (x86)\Steam\steamapps\common\Impossible Creatures;C:\Program Files (x86)\Steam\steamapps\common\Impossible Creatures\SDK\Lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>Memory.lib;Debug.lib;Lua.lib;Assist.lib;Util.lib;Platform.lib;Filesystem.lib;Localizer.lib;Math.lib;ModInterface.lib;SimEngine.lib;SurfVol.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <ShowProgress>LinkVerbose</ShowProgress>
+      <ShowProgress>NotSet</ShowProgress>
     </Link>
     <ProjectReference>
-      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
