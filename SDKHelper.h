@@ -5,8 +5,11 @@
 #include <windows.h>
 #include <math.h>
 #include <vector>
+#include <string>
 #include "Debug/db.h"
+#include "Memory/Memorylib.h"
 #include "ModInterface/DllInterface.h"
+#include "Lua/LuaConfig.h"
 
 typedef DLLInterface* (__cdecl *GetDllInterface_t)();
 typedef unsigned long (__cdecl *GetDllVersion_t)();
@@ -14,6 +17,7 @@ typedef unsigned long (__cdecl *GetDllVersion_t)();
 class WrappedDllInterface : public DLLInterface {
 protected:
     DLLInterface* original;
+public:
     WrappedDllInterface(DLLInterface* o) {
         original = o;
     }
@@ -55,6 +59,42 @@ protected:
     }
     ZsProgress ZsAbort() {
         return original->ZsAbort();
+    }
+};
+
+class WrappedGameInterface : public DLLGameInterface {
+protected:
+    DLLGameInterface* original;
+public:
+    WrappedGameInterface(DLLGameInterface *o) {
+        original = o;
+    }
+    DLLCpuInterface* GetCpuInterface() { 
+        return original->GetCpuInterface();
+    }
+    DLLGuiInterface* GetGuiInterface() { 
+        return original->GetGuiInterface();
+    }
+    DLLSimInterface* GetSimInterface() { 
+        return original->GetSimInterface();
+    }
+};
+
+class WrappedCpuInterface : public DLLCpuInterface {
+protected:
+    DLLCpuInterface* original;
+public:
+    WrappedCpuInterface(DLLCpuInterface* o) {
+        original = o;
+    }
+    GameAI* CreateGameAI(CommandInterface* command) {
+        return original->CreateGameAI(command);
+    }
+    void InitLuaAI(LuaConfig* lc) {
+        return original->InitLuaAI(lc);
+    }
+    void ShutLuaAI(LuaConfig* lc) {
+        return original->ShutLuaAI(lc);
     }
 };
 
