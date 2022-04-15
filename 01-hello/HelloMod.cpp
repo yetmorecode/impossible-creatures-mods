@@ -164,13 +164,16 @@ class HelloMod : public DLLInterface {
 
     bool Initialize(const char* version) {
         strncpy(this->version, version, sizeof(this->version) - 1);
-        dbTracefAux("(HelloMod) Thanks for loading Hello Creatures %s", version);
+        dbTracefAux(__FUNCTION__);
         setup = new HelloSetup();
         return true;
     }
 
-    const wchar_t* GetName() { return L"Hello Creatures"; }
-    void Shutdown() {}
+    const wchar_t* GetName() { 
+        dbTracefAux(__FUNCTION__);
+        return L"Hello Creatures"; 
+    }
+    void Shutdown() { dbTracefAux(__FUNCTION__); }
     bool IsScenarioCompatible(const char* modname) const { return strcmp("IC", modname) == 0; }
     DLLGameInterface* GameCreate(SimEngineInterface* sim) { return new HelloGame(sim); }
     void GameDestroy(DLLGameInterface* p) { delete p; }
