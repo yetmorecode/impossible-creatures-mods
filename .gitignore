@@ -1,6 +1,7 @@
 .vs
 .gitattributes
 Debug
+/Release
 *.log
 *.dll.recipe
 *.tlog

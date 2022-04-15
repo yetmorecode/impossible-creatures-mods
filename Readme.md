@@ -11,7 +11,7 @@ C/C++ -> General -> Additional Includes` and add the path to the `Include` folde
 inside the SDK directory.
 
 To link the SDK libs you need to navigate to `HelloMod -> Properties ->
-Linker -> General -> Additional Library Directories` and add the path to the `Include` folder
+Linker -> General -> Additional Library Directories` and add the path to the `Lib` folder
 inside the SDK directory.
 
 Both are set to `C:\Program Files (x86)\Steam\steamapps\common\Impossible Creatures` by default.
