@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32407.343
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HelloMod", "HelloMod.vcxproj", "{63EF5BAA-C4A6-4A26-8E7C-8B5B786D7B7E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HelloMod", "01-hello\HelloMod.vcxproj", "{63EF5BAA-C4A6-4A26-8E7C-8B5B786D7B7E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,8 +11,8 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{63EF5BAA-C4A6-4A26-8E7C-8B5B786D7B7E}.Debug|x86.ActiveCfg = Release|Win32
-		{63EF5BAA-C4A6-4A26-8E7C-8B5B786D7B7E}.Debug|x86.Build.0 = Release|Win32
+		{63EF5BAA-C4A6-4A26-8E7C-8B5B786D7B7E}.Debug|x86.ActiveCfg = Debug|Win32
+		{63EF5BAA-C4A6-4A26-8E7C-8B5B786D7B7E}.Debug|x86.Build.0 = Debug|Win32
 		{63EF5BAA-C4A6-4A26-8E7C-8B5B786D7B7E}.Release|x86.ActiveCfg = Release|Win32
 		{63EF5BAA-C4A6-4A26-8E7C-8B5B786D7B7E}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
