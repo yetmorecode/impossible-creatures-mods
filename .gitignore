@@ -6,8 +6,9 @@ Debug
 *.dll.recipe
 *.tlog
 *.pdb
-*.lib
 *.obj
+*.lib
+!/Lib/*.lib
 *.iobj
 *.exp
 *.ipdb
