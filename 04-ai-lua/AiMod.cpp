@@ -3,8 +3,8 @@
 static int __stdcall lua_hello(lua_State* s) {
     dbTracefAux("%s", __FUNCTION__);
     //double d = lua_tonumber(s, 1);  /* get argument */
-    //lua_pushnumber(s, 1337.0);  /* push result */
-    return 0;  /* number of results */
+    lua_pushstring(s, "Hello Mod");  /* push result */
+    return 1;  /* number of results */
 }
 
 class AiCpu : public WrappedCpuInterface {
@@ -23,9 +23,18 @@ public:
 class AiGame : public WrappedGameInterface {
 public:
     AiGame(DLLGameInterface* o) : WrappedGameInterface(o) {}
+    
     DLLCpuInterface* GetCpuInterface() {
         dbTracefAux("%s", __FUNCTION__);
-        return new AiCpu(original->GetCpuInterface());
+        DLLCpuInterface *cpu = new AiCpu(original->GetCpuInterface());
+        return cpu;
+    }
+
+    DLLSimInterface* GetSimInterface() {
+        DLLSimInterface* sim = original->GetSimInterface();
+        dbTracefAux("%s", __FUNCTION__);
+        //dbTracefAux("%s: MP = %d, SP = %d", __FUNCTION__, sim->GetPlayerCount(sim->GT_MP), sim->GetPlayerCount(sim->GT_SP));
+        return sim;
     }
 };
 

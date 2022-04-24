@@ -10,6 +10,8 @@
 #include "Memory/Memorylib.h"
 #include "ModInterface/DllInterface.h"
 #include "Lua/LuaConfig.h"
+#include "EngineAPI/SimEngineInterface.h"
+#include "EngineAPI/CharacterMap.h"
 
 typedef DLLInterface* (__cdecl *GetDllInterface_t)();
 typedef unsigned long (__cdecl *GetDllVersion_t)();
