@@ -72,11 +72,9 @@
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
       <AdditionalLibraryDirectories>..\Lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Memory.lib;Debug.lib;Lua.lib;Assist.lib;Util.lib;Platform.lib;Filesystem.lib;Localizer.lib;Math.lib;ModInterface.lib;SimEngine.lib;SurfVol.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
-    <ProjectReference>
-      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
-    </ProjectReference>
+    <ProjectReference />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -98,11 +96,9 @@
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
       <AdditionalLibraryDirectories>..\Lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Memory.lib;Debug.lib;Lua.lib;Assist.lib;Util.lib;Platform.lib;Filesystem.lib;Localizer.lib;Math.lib;ModInterface.lib;SimEngine.lib;SurfVol.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
-    <ProjectReference>
-      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
-    </ProjectReference>
+    <ProjectReference />
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="HelloMod.cpp" />

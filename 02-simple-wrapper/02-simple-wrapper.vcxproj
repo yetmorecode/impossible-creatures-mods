@@ -102,7 +102,7 @@
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
       <AdditionalLibraryDirectories>..\Lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Memory.lib;Debug.lib;Lua.lib;Assist.lib;Util.lib;Platform.lib;Filesystem.lib;Localizer.lib;Math.lib;ModInterface.lib;SimEngine.lib;SurfVol.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -124,7 +124,7 @@
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
       <AdditionalLibraryDirectories>..\Lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Memory.lib;Debug.lib;Lua.lib;Assist.lib;Util.lib;Platform.lib;Filesystem.lib;Localizer.lib;Math.lib;ModInterface.lib;SimEngine.lib;SurfVol.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

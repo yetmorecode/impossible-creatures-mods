@@ -106,10 +106,7 @@
       <AdditionalDependencies>Memory.lib;Debug.lib;Lua.lib;Assist.lib;Util.lib;Platform.lib;Filesystem.lib;Localizer.lib;Math.lib;ModInterface.lib;SimEngine.lib;SurfVol.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ShowProgress>NotSet</ShowProgress>
     </Link>
-    <ProjectReference>
-      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
-      <LinkLibraryDependencies>true</LinkLibraryDependencies>
-    </ProjectReference>
+    <ProjectReference />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -134,10 +131,7 @@
       <AdditionalDependencies>Memory.lib;Debug.lib;Lua.lib;Assist.lib;Util.lib;Platform.lib;Filesystem.lib;Localizer.lib;Math.lib;ModInterface.lib;SimEngine.lib;SurfVol.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ShowProgress>NotSet</ShowProgress>
     </Link>
-    <ProjectReference>
-      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
-      <LinkLibraryDependencies>true</LinkLibraryDependencies>
-    </ProjectReference>
+    <ProjectReference />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -158,10 +152,7 @@
       <AdditionalDependencies>Memory.lib;Debug.lib;Lua.lib;Assist.lib;Util.lib;Platform.lib;Filesystem.lib;Localizer.lib;Math.lib;ModInterface.lib;SimEngine.lib;SurfVol.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ShowProgress>NotSet</ShowProgress>
     </Link>
-    <ProjectReference>
-      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
-      <LinkLibraryDependencies>true</LinkLibraryDependencies>
-    </ProjectReference>
+    <ProjectReference />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -186,10 +177,7 @@
       <AdditionalDependencies>Memory.lib;Debug.lib;Lua.lib;Assist.lib;Util.lib;Platform.lib;Filesystem.lib;Localizer.lib;Math.lib;ModInterface.lib;SimEngine.lib;SurfVol.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ShowProgress>NotSet</ShowProgress>
     </Link>
-    <ProjectReference>
-      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
-      <LinkLibraryDependencies>true</LinkLibraryDependencies>
-    </ProjectReference>
+    <ProjectReference />
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AiMod.cpp" />
